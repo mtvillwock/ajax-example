@@ -11,15 +11,17 @@ Provide a branch-by-branch look at setting up an AJAX call. The branches go in r
 ### Steps:
 1) Set up event listener - use a bindEvents function to attach all your listeners to the DOM when the document is ready. Example:
 
-```$(document).ready(bindEvents);```
-```function bindEvents() {
+```javascript
+$(document).ready(bindEvents);
+function bindEvents() {
   $('.aClass').on('anEvent', aFunction);
   $('.someClass').on('someEvent', someFunction);
-}```
+}
+```
 
 2) Prevent default - keep browser from navigating away from current page, e.g., clicking a link defaults to a ```get``` route and clicking a ```submit``` button defaults to a ```post``` route.
 
-```
+```javascript
 function someAction(e) {
   e.preventDefault();
 }
@@ -29,7 +31,7 @@ Pass in ```e``` to your event listener's callback. Using just ```event.preventDe
 
 To see an example of this, paste this into your browser console:
 
-```
+```javascript
 var anEventThatHappened;
 document.addEventListener('keyup', function(e) {
   anEventThatHappened = e;
@@ -43,7 +45,7 @@ document.addEventListener('keyup', function(e) {
 
 4) AJAX call - you can structure this a handful of different ways. However, it should contain a url, a type/method, and data. You can also do some more complex things like extracting the options object or storing the request as a variable. Example:
 
-```
+```javascript
 var options = {
   url: http://localhost:9393/notes,
   type: 'post',
@@ -54,7 +56,7 @@ var request = $.ajax(options);
 
 5) Callbacks - provide a ```.done``` and ```fail``` callback for your AJAX request to perform after it gets its response from the server. Provide both so that you can handle errors from the server. Also, use done/fail, because success/error are being deprecated. Here is a cool Stack Overflow answer about this: [jQuery.ajax handling continue responses: “success:” vs “.done”?](http://stackoverflow.com/questions/8840257/jquery-ajax-handling-continue-responses-success-vs-done).
 
-```
+```javascript
 request.done(function(response) {console.log("done: ", response); });
 request.fail(function(response) {console.log("fail: ", response); });
 ```
