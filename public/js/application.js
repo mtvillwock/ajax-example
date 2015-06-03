@@ -20,12 +20,11 @@ function addNote(e) {
       // this will be accessible in params in your controller with params[:form_data]
     };
 
-    debugger;
-    $.ajax(options)
-    .done(function(response) {
-      console.log("done :", response);
-    })
-    .fail(function(response) {
+    var request = $.ajax(options)
+    request.done(function(response) {
+      $('.notes-container').append(response);
+    });
+    request.fail(function(response) {
       console.log("fail :", response);
     });
 
