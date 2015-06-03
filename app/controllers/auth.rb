@@ -10,7 +10,10 @@ post '/notes' do
   content_type :json
   if note.save
     p note
-    note.to_json
+    noteDiv = erb :"_note", layout: false, locals: {note: note}
+    p noteDiv
+  content_type :json
+    noteDiv.to_json
   else
     {error: "post failed to save"}.to_json
   end
