@@ -8,7 +8,7 @@ post '/notes' do
                   content: params[:content])
   p note
   content_type :json
-  if note.save!
+  if note.save
     p note
     note.to_json
   else
