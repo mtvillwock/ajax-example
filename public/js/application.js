@@ -10,6 +10,9 @@ $(document).ready(function() {
     debugger;
 
     var formData = $(event.target).serialize();
+    var formFields = $(event.target).children();
+    $(formFields[0]).val("");
+    formFields[1].value = "";
   });
 });
 
