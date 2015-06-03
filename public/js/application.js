@@ -7,7 +7,6 @@ $(document).ready(function() {
   $('.notes-container').on('submit', function() {
     console.log("submit clicked");
     event.preventDefault();
-    debugger;
 
     var formData = $(event.target).serialize();
     var formFields = $(event.target).children();
@@ -17,10 +16,11 @@ $(document).ready(function() {
     var options = {
       url: event.target.action, // http://localhost:9393/notes
       type: event.target.method, // 'post'
-      data: { form_data: formData }
+      data: formData // "title=text&content=moretext"
       // this will be accessible in params in your controller with params[:form_data]
     }
 
+    debugger;
     $.ajax(options)
     .done(function(response) {
       console.log("done :", response);
