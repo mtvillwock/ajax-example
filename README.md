@@ -47,19 +47,21 @@ document.addEventListener('keyup', function(e) {
 
 ```javascript
 var options = {
-  url: http://localhost:9393/notes,
+  url: 'http://localhost:9393/notes',
   type: 'post',
   data: formData
 };
 var request = $.ajax(options);
 ```
 
-5) Callbacks - provide a ```.done``` and ```fail``` callback for your AJAX request to perform after it gets its response from the server. Provide both so that you can handle errors from the server. Also, use done/fail, because success/error are being deprecated. Here is a cool Stack Overflow answer about this: [jQuery.ajax handling continue responses: “success:” vs “.done”?](http://stackoverflow.com/questions/8840257/jquery-ajax-handling-continue-responses-success-vs-done).
+5) Callbacks - provide a ```.done``` and ```fail``` callback for your AJAX request to perform after it gets its response from the server. Provide both so that you can handle errors from the server. Also, use done/fail, because success/error are being deprecated.
 
 ```javascript
 request.done(function(response) {console.log("done: ", response); });
 request.fail(function(response) {console.log("fail: ", response); });
 ```
+
+Here is a Stack Overflow answer with more information about this: [jQuery.ajax handling continue responses: “success:” vs “.done”?](http://stackoverflow.com/questions/8840257/jquery-ajax-handling-continue-responses-success-vs-done).
 
 ### Quickstart
 
