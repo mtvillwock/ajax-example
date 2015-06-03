@@ -3,10 +3,10 @@ get '/' do
 end
 
 post '/notes' do
-  post = Post.new(title: params[:title], content: params[:content])
+  note = Note.new(title: params[:title], content: params[:content])
   content_type :json
-  if post.save!
-    post.to_json
+  if note.save!
+    note.to_json
   else
     {error: "post failed to save"}.to_json
   end
