@@ -13,13 +13,13 @@ $(document).ready(function() {
     var formFields = $(event.target).children();
     $(formFields[0]).val("");
     formFields[1].value = "";
-
-    $.ajax({
+    var options = {
       url: event.target.action, // http://localhost:9393/notes
       type: event.target.method, // 'post'
       data: { form_data: formData }
       // this will be accessible in params in your controller with params[:form_data]
-    })
+    }
+    $.ajax(options)
   });
 });
 
