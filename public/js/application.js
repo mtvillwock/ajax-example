@@ -13,6 +13,12 @@ $(document).ready(function() {
     var formFields = $(event.target).children();
     $(formFields[0]).val("");
     formFields[1].value = "";
+
+    $.ajax({
+      url: event.target.action, // http://localhost:9393/notes
+      type: event.target.method, // 'post'
+      data: { formData: formData }
+    })
   });
 });
 
