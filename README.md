@@ -2,7 +2,14 @@
 
 ## Status
 
-In progress. First AJAX call written and broken out across branches. Need to add screenshots and video links.
+In progress. First AJAX call written and broken out across branches.
+
+Todo:
+
+- add screenshots and video links
+- add notes about controller and server routes (especially the partial and params)
+- implement additional functions to make whole app single page using partials
+- Extra credit: write Rspec and Jasmine(?) tests for all routes/AJAX calls
 
 ### Purpose
 
