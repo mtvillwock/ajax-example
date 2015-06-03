@@ -3,6 +3,7 @@ get '/' do
 end
 
 post '/notes' do
+  p params
   note = Note.new(title: params[:title], content: params[:content])
   content_type :json
   if note.save!

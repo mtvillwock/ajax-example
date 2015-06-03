@@ -17,7 +17,8 @@ $(document).ready(function() {
     $.ajax({
       url: event.target.action, // http://localhost:9393/notes
       type: event.target.method, // 'post'
-      data: { formData: formData }
+      data: { form_data: formData }
+      // this will be accessible in params in your controller with params[:form_data]
     })
   });
 });
