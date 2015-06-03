@@ -34,4 +34,10 @@ function addNote(e) {
     request.fail(function(response) {
         console.log("fail :", response);
     });
+
+    function editNote() {}
+
+    function deleteNote() {}
+
+    function completeNote() {}
 }
