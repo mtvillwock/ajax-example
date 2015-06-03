@@ -8,6 +8,8 @@ $(document).ready(function() {
     console.log("submit clicked");
     event.preventDefault();
     debugger;
+
+    var formData = $(event.target).serialize();
   });
 });
 
