@@ -7,6 +7,7 @@ $(document).ready(function() {
   $('.notes-container').on('submit', function() {
     console.log("submit clicked");
     event.preventDefault();
+    debugger;
   });
 });
 
