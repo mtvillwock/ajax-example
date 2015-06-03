@@ -1,14 +1,17 @@
 <div>
   <h1>AJAX Example</h1>
-    <h2>List of Notes</h2>
+  <h2>List of Notes</h2>
   <div class="notes-container">
     <div class="note">
       <h2>Note Title</h2>
       <p>Note Content</p>
     </div>
-    <form action="/notes" method="post">
-      <input type="text" name="title">
-      <input type="text" name="content">
-    </form>
+    <div class="new-note">
+      <form action="/notes" method="post">
+        <input type="text" name="title">
+        <input type="text" name="content">
+        <input type="submit" value="Make Note!">
+      </form>
+    </div>
   </div>
 </div>
